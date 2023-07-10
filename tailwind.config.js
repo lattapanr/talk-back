@@ -12,7 +12,7 @@ export default {
         satoshi: ["Satoshi", "sans-serif"],
       },
       colors: {
-        "off-white": "#f5ece9",
+        "off-white": "#f7f7f2",
         "dark-red": "#b42222",
         "dark-blue": "#143b66",
         "desert-gold": "#e8a13a",

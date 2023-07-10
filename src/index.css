@@ -9,34 +9,8 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.main {
-  width: 100vw;
-  min-height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  padding: 120px 24px 160px 24px;
-  pointer-events: none;
-  /* background-color: #f5ece9; */
-}
-
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
   }
-}
-
-/* Tailwind styles */
-/* whole page */
-.app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 mb-10;
-}
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm flex items-center justify-center;
-}
-
-/* nav bar */
-.dropdown {
-  @apply absolute right-0 top-full mt-2 w-full p-3 rounded-lg bg-white border border-black min-w-[150px] flex flex-col gap-2 justify-end items-end;
 }

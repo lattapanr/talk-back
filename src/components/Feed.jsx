@@ -81,13 +81,18 @@ const Feed = () => {
           <label htmlFor="simple-search" className="sr-only">
             Search
           </label>
-          <label htmlFor="simple-search">What do you wanna say?</label>
+          <label
+            htmlFor="simple-search"
+            className="text-charcoal dark:text-off-white"
+          >
+            What do you wanna say?
+          </label>
 
           <div className="relative w-full">
             <input
               type="text"
               id="simple-search"
-              className="bg-gray-50 border border-gray-300 text-charcoal text-sm rounded-lg focus:ring-park-green focus:border-park-green block w-full p-2.5"
+              className="bg-gray-50 border border-park-green dark:border-desert-gold text-charcoal text-sm rounded-lg focus:ring-park-green focus:border-park-green block w-full p-2.5"
               placeholder="Ex. I need to eat right now!"
               required
               value={message}
@@ -97,12 +102,15 @@ const Feed = () => {
         </div>
 
         <div>
-          <label htmlFor="communication" className="block text-charcoal">
+          <label
+            htmlFor="communication"
+            className="block text-charcoal dark:text-off-white"
+          >
             How should we go with this?
           </label>
           <select
             id="communication"
-            className="border-b border-gray-300 text-gray-900 text-sm focus:ring-desert-gold focus:border-desert-gold block w-full p-2.5"
+            className="border-b border-park-green dark:border-desert-gold text-gray-900 text-sm focus:ring-park-green block w-full p-2.5"
             value={communicationStyle}
             onChange={handleStyleChange}
           >
@@ -117,7 +125,7 @@ const Feed = () => {
 
         <button
           type="submit"
-          className="p-2.5 text-sm font-medium text-white bg-desert-gold rounded-lg border border-off-white hover:bg-park-green focus:ring-4 focus:outline-none focus:ring-emerald-400 "
+          className="p-2.5 text-sm font-bold font-medium text-white bg-park-green dark:bg-desert-gold rounded-lg hover:scale-105 hover:ease-in hover:duration-200"
           onClick={handleFormSubmit}
         >
           Generate Examples
@@ -129,7 +137,7 @@ const Feed = () => {
         {isSubmitted ? (
           <h2 className="mb-10">{`TalkBack's Friendly Suggestions for how to say "${submittedMessage}" in a ${submittedStyle} way.`}</h2>
         ) : (
-          <h2>TalkBack's Friendly Suggestions:</h2>
+          <></>
         )}
         <div>
           {isLoading ? (
