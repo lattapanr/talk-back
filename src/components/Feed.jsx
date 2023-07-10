@@ -157,7 +157,7 @@ const Feed = () => {
                 >
                   {response}
                   <button
-                    className="dark:bg-off-white dark:rounded-md"
+                    className="h-5 max-w-[20px] dark:bg-off-white dark:rounded-md"
                     onClick={() => {
                       navigator.clipboard.writeText(responseText);
                       setCopied(responseText);
@@ -169,7 +169,7 @@ const Feed = () => {
                     <img
                       src={copied === responseText ? TickIcon : CopyIcon}
                       alt={copied === responseText ? "Tick Icon" : "Copy Icon"}
-                      className="w-5 cursor-pointer"
+                      className="w-full cursor-pointer"
                     />
                   </button>
                 </div>
