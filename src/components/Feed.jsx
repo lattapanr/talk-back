@@ -157,7 +157,7 @@ const Feed = () => {
                 >
                   {response}
                   <button
-                    className="h-5 max-w-[20px] dark:bg-off-white dark:rounded-md"
+                    className="h-5 w-[20px] dark:bg-off-white dark:rounded-md"
                     onClick={() => {
                       navigator.clipboard.writeText(responseText);
                       setCopied(responseText);
