@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../index.css";
 import { communicationStyles } from "../data/communicationStyles";
+import CopyIcon from "../assets/icons/copy.svg";
+import TickIcon from "../assets/icons/tick.svg";
 
 const Feed = () => {
   const [message, setMessage] = useState("");
@@ -10,6 +12,7 @@ const Feed = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedMessage, setSubmittedMessage] = useState("");
   const [submittedStyle, setSubmittedStyle] = useState("");
+  const [copied, setCopied] = useState("");
 
   const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
@@ -125,7 +128,7 @@ const Feed = () => {
 
         <button
           type="submit"
-          className="p-2.5 text-sm font-bold font-medium text-white bg-park-green dark:bg-desert-gold rounded-lg hover:scale-105 hover:ease-in hover:duration-200"
+          className="p-2.5 text-sm font-bold text-white bg-park-green dark:bg-desert-gold rounded-lg hover:scale-105 hover:ease-in hover:duration-200"
           onClick={handleFormSubmit}
         >
           Generate Examples
@@ -135,19 +138,43 @@ const Feed = () => {
 
       <section className="max-w-2xl">
         {isSubmitted ? (
-          <h2 className="mb-10">{`TalkBack's Friendly Suggestions for how to say "${submittedMessage}" in a ${submittedStyle} way.`}</h2>
+          <h2 className="mb-10 text-charcoal dark:text-off-white">{`TalkBack's Friendly Suggestions for how to say "${submittedMessage}" in a ${submittedStyle} way.`}</h2>
         ) : (
           <></>
         )}
         <div>
           {isLoading ? (
-            <div>Waiting for response...</div>
+            <div className="text-charcoal dark:text-off-white">
+              Waiting for response...
+            </div>
           ) : (
-            responses.map((response, index) => (
-              <div key={index} className="border-b border-charcoal mb-4">
-                {response}
-              </div>
-            ))
+            responses.map((response, index) => {
+              const responseText = response.split(". ")[1];
+              return (
+                <div
+                  key={index}
+                  className="flex justify-between border-b border-charcoal mb-4 text-charcoal dark:text-off-white dark:border-off-white"
+                >
+                  {response}
+                  <button
+                    className="dark:bg-off-white dark:rounded-md"
+                    onClick={() => {
+                      navigator.clipboard.writeText(responseText);
+                      setCopied(responseText);
+                      setTimeout(() => {
+                        setCopied("");
+                      }, 1000);
+                    }}
+                  >
+                    <img
+                      src={copied === responseText ? TickIcon : CopyIcon}
+                      alt={copied === responseText ? "Tick Icon" : "Copy Icon"}
+                      className="w-5 cursor-pointer"
+                    />
+                  </button>
+                </div>
+              );
+            })
           )}
         </div>
       </section>
