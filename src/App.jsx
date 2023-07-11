@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Feed from "./components/Feed";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 import { useState } from "react";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Hero />
         <Feed />
+        <Footer />
       </div>
     </main>
   );
