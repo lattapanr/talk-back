@@ -96,7 +96,7 @@ const Feed = () => {
             <input
               type="text"
               id="simple-search"
-              className="bg-gray-50 border border-park-green dark:border-desert-gold text-charcoal text-sm rounded-lg focus:ring-park-green focus:border-park-green block w-full p-2.5"
+              className="bg-gray-50 border border-park-green dark:border-desert-gold text-charcoal text-sm rounded-lg focus:ring-park-green focus:border-park-green dark:focus:ring-desert-gold dark:focus:border-desert-gold block w-full p-2.5"
               placeholder="Ex. I need to eat right now!"
               required
               value={message}
@@ -114,7 +114,7 @@ const Feed = () => {
           </label>
           <select
             id="communication"
-            className="border-b border-park-green dark:border-desert-gold text-gray-900 text-sm focus:ring-park-green block w-full p-2.5"
+            className="border-b border-park-green dark:border-desert-gold text-gray-900 text-sm focus:ring-park-green block w-full p-2.5 rounded-lg"
             value={communicationStyle}
             onChange={handleStyleChange}
           >
