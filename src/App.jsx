@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <main className={`w-full ${bgClass} ${darkMode ? "dark" : ""}`}>
-      <div className="relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6">
+      <div className="relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 sm:h-screen">
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Hero />
         <Feed />
