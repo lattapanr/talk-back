@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 import "../index.css";
 import { communicationStyles } from "../data/communicationStyles";
 import CopyIcon from "../assets/icons/copy.svg";
@@ -144,8 +145,23 @@ const Feed = () => {
         )}
         <div>
           {isLoading ? (
-            <div className="text-charcoal dark:text-off-white">
-              Waiting for response...
+            <div>
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed once, initially
+                  "Waiting for response",
+                  1000,
+                  "Waiting for response.",
+                  1000,
+                  "Waiting for response..",
+                  1000,
+                  "Waiting for response...",
+                  1000,
+                ]}
+                speed={50}
+                className="text-charcoal dark:text-off-white"
+                repeat={Infinity}
+              />
             </div>
           ) : (
             responses.map((response, index) => {
