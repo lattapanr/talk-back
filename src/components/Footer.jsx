@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="h-12 w-full flex justify-end items-end">
-      <p className="text-xs text-charcoal dark_text-off-white ">
+      <p className="text-xs text-charcoal dark:text-off-white ">
         Made by{" "}
         <a
           href="https://github.com/lattapanr"
