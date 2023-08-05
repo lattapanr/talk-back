@@ -11,6 +11,7 @@ export const communicationStyles = [
   { value: "respectful", label: "Respectful" },
   { value: "assertive", label: "Assertive" },
   { value: "caring", label: "Caring" },
+  { value: "legalese", label: "Legalese" },
   { value: "humorous", label: "Humorous" },
   { value: "direct", label: "Direct" },
   { value: "encouraging", label: "Encouraging" },
