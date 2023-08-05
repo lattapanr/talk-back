@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="w-full max-w-[750px] flex items-center justify-center mb-12 border border-charcoal bg-white dark:bg-gray-200 dark:border-off-white">
       <section className="flex items-center flex-col justify-center sm:flex-row px-10 pt-5">
-        <div className="flex-column items-center h-[210px] sm:h-auto sm:w-75 ">
+        <div className="flex-column items-center h-[230px] sm:h-auto sm:w-75 ">
           <div
             aria-label={"Fumbling for the right word to say?"}
             className="mb-5"
@@ -54,7 +54,7 @@ const Hero = () => {
         <img
           src={Cartoon}
           alt="a male cartoon looking having no idea what to say"
-          className="w-auto h-auto max-w-[260px]"
+          className="w-[200px] sm:w-auto h-auto max-w-[230px]"
         />
       </section>
     </section>
