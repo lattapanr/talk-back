@@ -18,7 +18,7 @@ const Feed = () => {
   const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
   const APIBODY = {
-    model: "text-davinci-003",
+    model: "gpt-3.5-turbo-instruct",
     prompt: `Translate the following message into a ${communicationStyle} communication style:
 
     "${message}"
